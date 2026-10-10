@@ -169,17 +169,15 @@ header.solid{background:rgba(14,12,11,.96)}
 .chip span{padding-right:8px}
 .look-cta{margin-top:20px}
 
-/* GALERIA */
-.gal-tabs{display:flex;justify-content:center;gap:9px;margin-top:34px;flex-wrap:wrap}
-.gal-tab{padding:10px 22px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--txt);font-family:'Poppins';font-weight:400;font-size:.88rem;cursor:pointer;transition:all .2s}
-.gal-tab:hover{border-color:var(--gold)}
-.gal-tab.active{background:var(--gold);border-color:var(--gold);color:#1a1410}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
-.gal-grid figure{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:1/1;cursor:zoom-in;box-shadow:var(--shadow-soft)}
-.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.gal-grid figure:hover img{transform:scale(1.08)}
-.gal-grid figure::after{content:"⤢";position:absolute;top:10px;right:12px;color:#fff;opacity:0;transition:.3s;font-size:1rem;text-shadow:0 2px 6px rgba(0,0,0,.6)}
-.gal-grid figure:hover::after{opacity:1}
+/* MENU / PRECIOS */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px 44px;margin-top:52px}
+.menu-col h3{font-family:'Playfair Display';font-size:1.35rem;color:var(--gold-l);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.menu-item{display:flex;align-items:baseline;gap:10px;margin-bottom:15px}
+.menu-item .mn{font-weight:300;color:var(--txt)}
+.menu-item .md{flex:1;border-bottom:1px dotted var(--line);align-self:flex-end;transform:translateY(-4px)}
+.menu-item .mp{font-family:'Playfair Display';font-weight:600;color:var(--gold);white-space:nowrap}
+.menu-note{text-align:center;color:var(--muted);font-size:.82rem;font-weight:300;margin-top:30px}
+.sec-cta{text-align:center;margin-top:38px}
 
 /* NOSOTROS */
 .nos-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:54px;align-items:center}
@@ -298,6 +296,9 @@ footer{background:#0a0908;color:#fff;padding:60px 0 28px;border-top:1px solid va
 .f-wa{background:var(--wa);color:var(--wa)}
 .f-call{background:var(--gold);color:var(--gold)}
 .f-call svg{fill:#1a1410}
+.f-reservar{align-self:flex-end;background:linear-gradient(135deg,var(--gold-l),var(--gold-d));color:#1a1410;font-weight:600;font-size:.92rem;padding:13px 20px;border-radius:99px;box-shadow:0 10px 26px rgba(0,0,0,.45);display:flex;align-items:center;gap:8px;white-space:nowrap;transition:transform .2s}
+.f-reservar:hover{transform:translateY(-3px)}
+.f-reservar svg{width:18px;height:18px;fill:#1a1410}
 .f-call::before,.f-wa::before{content:"";position:absolute;inset:0;border-radius:50%;border:3px solid currentColor;animation:ring 2.2s ease-out infinite}
 @keyframes ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
 .social-float{position:fixed;left:16px;bottom:20px;z-index:800;display:flex;flex-direction:column;gap:10px}
@@ -378,14 +379,14 @@ footer{background:#0a0908;color:#fff;padding:60px 0 28px;border-top:1px solid va
     </a>
     <nav class="quicknav">
       <a href="#resultados">Resultados</a>
-      <a href="#galeria">Galería</a>
+      <a href="#precios">Precios</a>
       <a href="#reservar">Reservar</a>
     </nav>
     <nav class="nav-links">
       <a href="#servicios">Servicios</a>
       <a href="#resultados">Resultados</a>
       <a href="#look">Tu look</a>
-      <a href="#galeria">Galería</a>
+      <a href="#precios">Precios</a>
       <a href="#resenas">Reseñas</a>
       <a href="#reservar" class="nav-cta">Reservar</a>
     </nav>
@@ -401,7 +402,7 @@ footer{background:#0a0908;color:#fff;padding:60px 0 28px;border-top:1px solid va
     <a href="#servicios" data-close>Servicios</a>
     <a href="#resultados" data-close>Resultados</a>
     <a href="#look" data-close>Arma tu look</a>
-    <a href="#galeria" data-close>Galería</a>
+    <a href="#precios" data-close>Precios</a>
     <a href="#resenas" data-close>Reseñas</a>
     <a href="#ubicacion" data-close>Ubicación</a>
     <a href="#reservar" class="d-cta" data-close>Reservar cita</a>
@@ -463,6 +464,7 @@ footer{background:#0a0908;color:#fff;padding:60px 0 28px;border-top:1px solid va
       <article class="svc reveal"><div class="svc-img"><img src="assets/trend-nailart.jpg" alt="Uñas en gel y acrílico" loading="lazy" onerror="this.src='assets/svc-manicure.jpg'"/></div><div class="svc-cap"><h3>Uñas en Gel & Acrílico</h3><p>Manicure, pedicure y nail art.</p><span class="svc-price">Desde $12</span><a class="svc-book" href="#reservar" data-svc="Uñas en Gel & Acrílico">Reservar →</a></div></article>
       <article class="svc reveal"><div class="svc-img"><img src="assets/trend-moneypiece.jpg" alt="Estética y cejas" loading="lazy" onerror="this.src='assets/hero.jpg'"/></div><div class="svc-cap"><h3>Estética & Cejas</h3><p>Cejas, pestañas y depilación.</p><span class="svc-price">Desde $10</span><a class="svc-book" href="#reservar" data-svc="Estética & Cejas">Reservar →</a></div></article>
     </div>
+    <div class="sec-cta reveal"><a href="#reservar" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="#1a1410"><path d="M19 4h-1V3a1 1 0 0 0-2 0v1H8V3a1 1 0 0 0-2 0v1H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10z"/></svg> Reservar mi cita</a></div>
   </div>
 </section>
 
@@ -499,6 +501,7 @@ footer{background:#0a0908;color:#fff;padding:60px 0 28px;border-top:1px solid va
       </div>
     </div>
     <p class="ba-hint">👆 Arrastra el botón dorado de lado a lado</p>
+    <div class="sec-cta reveal"><a href="#reservar" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="#1a1410"><path d="M19 4h-1V3a1 1 0 0 0-2 0v1H8V3a1 1 0 0 0-2 0v1H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10z"/></svg> Quiero mi transformación</a></div>
   </div>
 </section>
 
@@ -528,22 +531,46 @@ footer{background:#0a0908;color:#fff;padding:60px 0 28px;border-top:1px solid va
   </div>
 </section>
 
-<!-- GALERIA -->
-<section class="sec alt" id="galeria">
+<!-- MENU / PRECIOS -->
+<section class="sec alt" id="precios">
   <div class="wrap">
     <div class="center reveal" style="max-width:640px">
-      <div class="eyebrow">Nuestro trabajo</div>
-      <h2 class="sec-title">Galería de <em>estilos</em></h2>
-      <p class="sec-sub center">Filtra por lo que buscas y toca cualquier foto para ampliarla.</p>
+      <div class="eyebrow">Carta de servicios</div>
+      <h2 class="sec-title">Servicios & <em>precios</em></h2>
+      <p class="sec-sub center">Todo claro desde el inicio, sin sorpresas. Precios referenciales desde; el valor final depende del largo y el servicio.</p>
     </div>
-    <div class="gal-tabs" id="galTabs">
-      <button class="gal-tab active" data-cat="all">Todo</button>
-      <button class="gal-tab" data-cat="cabello">Cabello</button>
-      <button class="gal-tab" data-cat="color">Color</button>
-      <button class="gal-tab" data-cat="unas">Uñas</button>
-      <button class="gal-tab" data-cat="barba">Barbería</button>
+    <div class="menu-grid reveal">
+      <div class="menu-col">
+        <h3>Cabello</h3>
+        <div class="menu-item"><span class="mn">Corte & peinado · ella</span><span class="md"></span><span class="mp">$12</span></div>
+        <div class="menu-item"><span class="mn">Corte caballero</span><span class="md"></span><span class="mp">$8</span></div>
+        <div class="menu-item"><span class="mn">Tinte / color</span><span class="md"></span><span class="mp">$35</span></div>
+        <div class="menu-item"><span class="mn">Balayage / mechas</span><span class="md"></span><span class="mp">$55</span></div>
+        <div class="menu-item"><span class="mn">Alisado / keratina</span><span class="md"></span><span class="mp">$45</span></div>
+      </div>
+      <div class="menu-col">
+        <h3>Barbería</h3>
+        <div class="menu-item"><span class="mn">Corte + barba</span><span class="md"></span><span class="mp">$12</span></div>
+        <div class="menu-item"><span class="mn">Perfilado de barba</span><span class="md"></span><span class="mp">$6</span></div>
+        <div class="menu-item"><span class="mn">Afeitado a navaja</span><span class="md"></span><span class="mp">$8</span></div>
+        <div class="menu-item"><span class="mn">Diseño / líneas</span><span class="md"></span><span class="mp">$5</span></div>
+      </div>
+      <div class="menu-col">
+        <h3>Uñas</h3>
+        <div class="menu-item"><span class="mn">Manicure semipermanente</span><span class="md"></span><span class="mp">$12</span></div>
+        <div class="menu-item"><span class="mn">Uñas en gel / acrílico</span><span class="md"></span><span class="mp">$20</span></div>
+        <div class="menu-item"><span class="mn">Pedicure spa</span><span class="md"></span><span class="mp">$15</span></div>
+        <div class="menu-item"><span class="mn">Retiro / mantenimiento</span><span class="md"></span><span class="mp">$8</span></div>
+      </div>
+      <div class="menu-col">
+        <h3>Estética</h3>
+        <div class="menu-item"><span class="mn">Diseño de cejas</span><span class="md"></span><span class="mp">$6</span></div>
+        <div class="menu-item"><span class="mn">Lifting de pestañas</span><span class="md"></span><span class="mp">$20</span></div>
+        <div class="menu-item"><span class="mn">Depilación (por zona)</span><span class="md"></span><span class="mp">$8</span></div>
+        <div class="menu-item"><span class="mn">Maquillaje social</span><span class="md"></span><span class="mp">$25</span></div>
+      </div>
     </div>
-    <div class="gal-grid" id="galGrid"></div>
+    <div class="sec-cta reveal"><a href="#reservar" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="#1a1410"><path d="M19 4h-1V3a1 1 0 0 0-2 0v1H8V3a1 1 0 0 0-2 0v1H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10z"/></svg> Reservar mi cita</a></div>
   </div>
 </section>
 
@@ -704,6 +731,7 @@ footer{background:#0a0908;color:#fff;padding:60px 0 28px;border-top:1px solid va
 
 <!-- FLOATS -->
 <div class="floats">
+  <a class="f-reservar" href="#reservar" aria-label="Reservar cita"><svg viewBox="0 0 24 24"><path d="M19 4h-1V3a1 1 0 0 0-2 0v1H8V3a1 1 0 0 0-2 0v1H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10z"/></svg> Reservar</a>
   <a class="f-call" href="tel:+593994144999" aria-label="Llamar">
     <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
   </a>
@@ -789,23 +817,6 @@ document.querySelectorAll('.look-cat').forEach(b=>b.addEventListener('click',()=
 }));
 lookBook.addEventListener('click',()=>presetSvc(lookBook.dataset.svc));
 renderChips('ella');
-
-// GALERIA
-const gallery=[
-  {img:"trend-capas",cat:"cabello"},{img:"trend-ondas",cat:"cabello"},{img:"trend-cortina",cat:"cabello"},{img:"work-1",cat:"cabello"},
-  {img:"trend-balayage",cat:"color"},{img:"trend-moneypiece",cat:"color"},{img:"trend-color",cat:"color"},{img:"svc-color",cat:"color"},
-  {img:"trend-francesa",cat:"unas"},{img:"trend-nailart",cat:"unas"},{img:"trend-cromado",cat:"unas"},{img:"trend-nude",cat:"unas"},{img:"trend-floral",cat:"unas"},{img:"svc-manicure",cat:"unas"},
-  {img:"trend-fade",cat:"barba"},{img:"trend-mullet",cat:"barba"},{img:"trend-texturizado",cat:"barba"},{img:"trend-barba",cat:"barba"}
-];
-const galGrid=document.getElementById('galGrid');
-function renderGal(cat){
-  galGrid.innerHTML=gallery.filter(g=>cat==='all'||g.cat===cat).map(g=>`<figure data-lb="assets/${g.img}.jpg"><img src="assets/${g.img}.jpg" alt="Estilo Studio3" loading="lazy" onerror="this.src='assets/hero.jpg'"></figure>`).join('');
-}
-document.querySelectorAll('.gal-tab').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.gal-tab').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');renderGal(b.dataset.cat);
-}));
-renderGal('all');
 
 // LIGHTBOX
 (function(){
