@@ -1,4 +1,6 @@
 node_modules/
 server.mjs
+gen-*.ps1
+_raw/
 .DS_Store
 Thumbs.db
